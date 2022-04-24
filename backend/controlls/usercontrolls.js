@@ -1,16 +1,35 @@
 const res = require("express/lib/response")
 const user = require("../models/user")
+const bcrypt = require("bcrypt")
+const saltRounds = 10
 
 
 // API: /adduser
 
 exports.AddUser = async (req, res) => {
     try {
-        const newuser = new user(req.body)
-        console.log(newuser)
-        await newuser.save()
-        console.log("newuser")
-        return res.status(200).json({ msg: "user added", newuser })
+        const { role, password, confirmPassword } = req.body
+        const hashedConfirmPassword = await bcrypt.hash(confirmPassword, saltRounds);
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        if (password === confirmPassword && role) {
+            console.log(role, password, confirmPassword)
+            const newuser = new user({
+                ...req.body, password: hashedPassword, confirmPassword: hashedConfirmPassword
+
+            })
+
+            await newuser.save()
+            console.log(newuser)
+            return res.status(200).json({ msg: "user added", newuser })
+
+        }
+
+
+
+        return res.status(400).json({ msg: "watch out man" })
+
+
+
 
 
 
