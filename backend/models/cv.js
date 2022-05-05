@@ -7,96 +7,76 @@ const cvschema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    Owner: {
-        type: String,
-    },
-    AboutMe: {
-        key: { type: Number },
-        value: { type: String },
-    },
-    Header: {
-        Parcour: {
-            type: String,
-        },
+    
+    // AboutMe: {
+    //    type: String ,
+    //    required: true
+    // },
+     
+    //     Parcours: {
+    //         type: String,
+    //     },
 
-        Tel: {
-            type: String,
-        },
-        ProfileImg: {
-            type: String,
-        },
-        Adress: {
-            type: String,
-        },
-        lastName: {
-            type: String,
-        },
-        name: {
-            type: String,
-        },
-    },
-    Stages: [
-        {
-            key: { type: Number },
-            NatureStage: { type: String },
-            Mission: { type: String },
-            Entreprise: { type: String },
-            DateFinYear: { type: String },
-            DateFinMois: { type: String },
-            DateDemarageYear: { type: String },
-            DateDemarageMois: { type: String },
-        },
-    ],
-    Competences: [
-        {
-            key: { type: Number },
-            value: { type: String },
-        },
-    ],
-    Langues: [
-        {
-            key: { type: Number },
-            Langue: { type: String },
-            Niveau: { type: String },
-        },
-    ],
-    Diplomes: [
-        {
-            key: {
-                type: Number,
-            },
-            Titre: {
-                type: String,
-            },
-            Date: {
-                type: String,
-            },
-            Etabliss: {
-                type: String,
-            },
+    //     Tel: {
+    //         type: String,
+    //     },
+        // ProfileImg: {
+        //     type: String,
+        // },
+        //hedhy nekhdmoha bl malter wala bl fire base
+    //     Adress: {
+    //         type: String,
+    //     },
+        
+        
+    
+    // Stages: [
+    //     {
+           
+    //         NatureStage: { type: String },
+    //         Mission: { type: String },
+    //         Entreprise: { type: String },
+    //         DateFinYear: { type: String },
+    //         DateFinMois: { type: String },
+    //         DateDemarageYear: { type: String },
+    //         DateDemarageMois: { type: String },
+    //     },
+    // ],
+    // Competences: [
+    //     {
+    //          type: String 
 
-        },
-    ],
-    status: {
-        type: String,
-        enum: ["Pending", "Verified"],
-        default: "Pending",
-    },
-    comments: [
-        {
-            pos: String,
-            value: String,
-        },
-    ],
-    correcteur: String,
-    PostDate: {
-        type: Date,
-        default: Date.now(),
-    },
-    ValidationDate: Date,
-    userid: {
-        type: Schema.Types.ObjectId, ref: "user"
-    }
+    //     }  
+        
+    // ],
+    // Langues: [
+    //     [{type:String}]
+    // ],
+    // Diplomes: [
+    //     {
+            
+    //         Titre: {
+    //             type: String,
+    //         },
+    //         Date: {
+    //             type: String,
+    //         },
+    //         Etabliss: {
+    //             type: String,
+    //         },
+
+    //     },
+    // ],
+    
+    
+    
+
+    // PostDate: {
+    //     type: Date,
+    //     default: Date.now(),
+    // },
+    
+   
 });
 
 module.exports = mongoose.model("cv", cvschema)

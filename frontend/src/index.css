@@ -1,13 +1,168 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .notif-modal {
+    margin-left: 50px;
+    width: 400px;
+    border-radius: 13px;
+    background-color: #3f3d5620;
+    margin-top: 10px;
+  }
+  
+  .Congrats-img {
+    width: 500px;
+  }
+  
+  .nav-buttons {
+    display: flex;
+  }
+  .nav-buttons button {
+    margin: 0 5px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  
+  .form-control:focus {
+    border-color: #20b46f;
+    box-shadow: 0 0 0 0.2rem rgb(39, 197, 123);
+  }
+  
+  .form-select:focus {
+    border-color: #20b46f;
+    box-shadow: 0 0 0 0.2rem rgb(39, 197, 123);
+  }
+  
+  .hiddenOposite {
+    margin-top: 20px;
+    color: rgba(25, 135, 84, 1);
+    display: none;
+  }
+  
+  .hiddenOposite button {
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hiddenOposite {
+      display: block;
+    }
+  }
+  
+  .button {
+    -webkit-appearance: none;
+    background: -webkit-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+    background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+    background-size: 500%;
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    color: #fff;
+    cursor: pointer;
+    font: 1em Raleway, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 3rem;
+    letter-spacing: 0.05em;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 20rem;
+  }
+  
+  .button:hover {
+    animation-name: gradient;
+    -webkit-animation-name: gradient;
+    animation-duration: 0.7s;
+    -webkit-animation-duration: s;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }
+  
+  .slidebar {
+    position: fixed;
+    margin: 0;
+    top: 20%;
+    padding: 20px 10px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+  }
+  
+  .Verif_account {
+    width: 400px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    padding: 2rem 2rem;
+    margin-top: 3rem;
+    background-color: white;
+    border-radius: 13px;
+  }
+  
+  .lower {
+    display: none;
+  }
+  
+  .update-form {
+    width: 450px;
+    padding: 15px;
+    border-radius: 13px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  @media screen and (max-width: 576px) {
+    .notif-modal {
+      margin-left: 0;
+      width: 100%;
+    }
+    .nav-buttons {
+      flex-direction: column;
+    }
+    /* .form-control {
+      width: 100%;
+    }
+    .form-select {
+      width: 100%;
+    } */
+    .Congrats-img {
+      width: 90%;
+    }
+  
+    .Verif_account {
+      width: 90%;
+    }
+    .lower {
+      display: block;
+    }
+    .update-form {
+      width: 95%;
+    }
+  }
+  

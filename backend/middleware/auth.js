@@ -1,16 +1,17 @@
-const req = require("express/lib/request");
-const users = require("../models/users");
+const users = require("../models/user");
 const jwt = require("jsonwebtoken");
 exports.isAuth = async (req, res, next) => {
-    const jwt = require("jsonwebtoken");
-    const token = req.header("authentification");
+    
     try {
+        const token = req.headers['auth'];
         if (!token) {
             return res.status(400).send("you are not authorized");
         }
-        const decoded = jwt.verify(token, process.env.secretOrKey);
+        const decoded =await jwt.verify(token, process.env.privateKey);
         const user = await users.findById(decoded.id);
-        req.user = user;
+        if (!user){
+            return res.status(400).send("you are not authorized");
+        }
         next();
     } catch (error) {
         console.log("server error");
